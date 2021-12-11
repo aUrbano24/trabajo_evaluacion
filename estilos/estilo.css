@@ -1,0 +1,544 @@
+/** FUENTES **/
+
+@font-face {
+    font-family: titulo; /* Fuente para el titulo*/
+    src: url("../fuentes/FFFFORWA.TTF");
+}
+
+@font-face {
+    font-family: menu_;  /* la fuente para el texto normal */
+    src: url("../fuentes/Heartbit-Bold.otf");
+}
+/*Para el pie de página*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+/** FIN FUENTES **/
+
+/***** ELEMENTOS PRINCIPALES ****/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth; /* hacer una animacón suave hacia el destino */
+}   
+
+body {
+    background-color:black;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font: 1.1em;
+}
+body section:nth-child(odd) {
+  background-color:black;
+  color: white;
+}
+body section:nth-child(even) {
+  background-color:#e3e8f1;
+  color: rgb(0, 0, 0);
+}
+#container {
+    width:100%;
+    margin:auto; /*Centrar el contenedor*/
+}
+h1 {
+  text-transform: uppercase; /*Letras full mayúsculas*/
+  letter-spacing:0.2em; /*Espaciado entre letras para los*/
+  font-family: titulo;
+}
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.4em;
+  text-indent: 1.4em; /*Sangría de primera línea*/
+  padding: 0% 3%;
+}
+
+/***** FIN ELEMENTOS PRINCIPALES ****/
+
+/***** MENU ******/
+
+nav {position:sticky; /**** para que el menu quede pegado arriba ****/
+    top:0;           /**** indicar el margen ****/
+    z-index:99;     /**** nivel de superposición ***/
+    opacity:0.85;}   /*****   opacidad ****/
+
+.topnav {
+    overflow: hidden; /* ocultar el overflow */
+    background-color: #FFFFFF;
+    font-family:menu_;
+    letter-spacing: 0.2em;
+    
+  }
+  
+  .topnav a {
+    float: left; /** Hacer que se muestren en el lado izquierdo**/
+    display: block;
+    color: #03256C;
+    text-align: center;
+    padding: 13px 17px;
+    text-decoration: none; /*Quitar la decoración por defecto de los enlaces */
+    font-size: 1.15em;
+  }
+  
+  .topnav a:hover {
+    background-color: #03256C;
+    color: #ffffff;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+  }
+  
+  .topnav a.active {
+    background-color: #03256C;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none; /* Ocultamos el icono del menu hamburguesa porque solo queremos verlo en versión para móvil*/
+  }
+
+  /**** FIN MENU ****/
+
+
+/******** SECCIÓN HERO ***********/
+
+#hero {background-image: url("../imagenes/Hero.jpg");
+  width: 90%;
+  margin: auto;
+       background-size:cover; /* estira o encoge la imagen para que ocupe el bloque 
+                                 entero */
+       background-position:50%; /* para que la imagen del hero se recorte centrando el lugar que nos interesa */
+       height:95vh;  /* establecemos la altura */
+       position:relative; /* posición relativa para poder posicionar rótulos */
+
+    }
+
+#hero h1 {position: absolute;  /* posicion absoluta para posicionarlo en la imagen del hero */
+          top:15px; /*Separación de arriba*/
+          left: 20px; /*Separación de la izquierda*/
+          font-family:titulo; /* Fuente para el título */
+          font-size:2.2em;
+          letter-spacing:0.2em;
+          color: white;
+        }
+
+#calltoaction { /*FLECHA HACIA LA INTRODUCCIÓN DE LA WEB*/
+  position:absolute; 
+  background-color: #ffffff;
+  border-radius: 50%; /*Dar forma circular*/
+  width: min-content;
+  left: 0; /*Centrar el ancho junto al right*/
+  right: 0;/*Centrar el ancho junto al left*/
+  bottom: 2%;
+  margin: auto;
+  color: rgb(0, 0, 0);
+  font-size: 2.0em
+}
+
+#calltoaction:hover {
+  background-color: #03256C;
+  color: white;
+  cursor:pointer;
+}
+
+.fa-arrow-up { /*FLECHA PARA SUBIR AL HOME*/
+  position:fixed; /*Para que siempre permanezca en el mismo sitio independientemente del tamaño de pantalla*/
+  bottom:15px;
+  right:15px;
+  color:white;    
+  border:2px solid #3bccdf;
+  background-color: black;
+  padding:3px;
+  border-radius:25%;
+}
+
+.fa-arrow-up:hover {
+  background-color: #035c6c;
+  
+}
+                    
+/***************** SECCIÓN DE INTRODUCIÓN ****************/
+
+#introduccion {
+  padding:8%;
+  text-align:justify;
+}
+
+#introduccion h1 {
+  text-align:center;
+  font-size:2em;
+}
+#introduccion p {
+  margin-top: 5%;
+  padding-left: 10%;
+}
+#introduccion img {
+  margin-right: 3%;
+}
+
+#imagen-introducion {width:50%;  /* como es grande, que ocupe solo el 50% del espacio disponible */
+          float:left; /* OJO, NUEVO: para que la imagen quede rodeada por texto */
+          margin:15px;
+        }
+
+#introduccion p:first-letter {font-size:1.8em;  /*** selector nuevo :first-letter */}
+
+
+/********** SECCIÓN COMPONENTES  ************/
+
+#componentes {
+          border-bottom: 2px solid #b3aa77;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr;
+          width: 100%;
+
+
+}
+
+#componentes h1 {
+  font-size:2em;
+  text-align:center;
+}
+
+#componentes p:first-letter {font-size:1.8em;}
+
+.mitad {box-sizing:border-box;  /*** OJO: PARA QUE EL PADDING Y EL BORDE CUENTE DENTRO DEL WIDTH ***/ 
+        padding:2%;
+       }
+
+.resetear {clear:both;} /* deja de apilar cualquier cosa que tenga detrás */
+
+#derecha {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 5%;
+}
+#derecha img {
+  max-width: 100%;
+  height: auto;
+  width: 150px;
+  cursor: pointer;
+  padding: 1%;
+}
+#derecha img:hover {
+  border: 3px solid #03256C;
+  border-radius: 10px;
+}
+
+#izqda {
+        padding:30px 2%;}
+
+
+#odin {width:75%; /****** del bloque en el que está contenida la imagen ******/
+       display:block;  /****** para poder centrar la imagen en su columna *******/
+       margin:auto;} 
+.componente {
+  display: none;
+}
+#imagen-fuente:hover fuente{
+  display: block;
+}
+
+/****** SECCIÓN GALERIA ***************/
+/* Contenedor del Slider */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Ocultar las imagenes por defecto */
+.mySlides {
+  display: none;
+}
+/*Para que la galeria empieze mostrando la primera imagen, de lo contrario no mostraría ninguna porque todas tienen un display none por defecto*/
+#primera {
+  display: block; 
+}
+
+/* Botones de avanzar o retroceder */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Posicion del boton nex en la derecha */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Hover a los botones next y prev */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Texto de la imagen */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Numero de la imagen */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Botones Indicadores */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Animacion desvanecer/ fading*/
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/*Tamaño Imagen*/
+.imgmain {
+  width: 1500px;
+  height: 500px;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+#gallery h1 {
+
+             text-align:center;
+             padding:30px 0;}
+
+/************ estilo de stories usando el snippet accordion *********/            
+
+#stories {padding:30px 10%;}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  font-family: runas;
+}
+
+.active, .accordion:hover {
+  background-color: #b3aa77;; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: black;
+  font-family:texto;
+  overflow: hidden;
+}
+
+/*PIE DE PÁGINA*/
+
+:root{
+    --color-esqueleto:#EFF3F5;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    background: var(--color-esqueleto);
+}
+
+.cover{
+    width: 100%;
+    height: 500px;
+    background: var(--color-esqueleto);
+    margin-top: 20px;
+}
+
+.container__article{
+    max-width: 1000px;
+    padding: 0px 20px;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container__article .box__article{
+    width: 200px;
+    height: 250px;
+    background: var(--color-esqueleto);
+    margin: 20px;
+}
+
+/*Aquí debajo va el FOOTER*/
+
+footer{
+    width: 100%;
+    padding: 50px 0px;
+    background-image: url(../Images/background-footer.svg);
+    background-size: cover;
+    background-color: #ffffff;
+    
+    /*background-color: #d0f0f8;
+    -webkit-mask-image: url("../Images/background-footer.svg");
+    mask-image: url("../Images/background-footer.svg");
+    -webkit-mask-size: cover;
+    mask-size: cover;*/
+}
+
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box__footer{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo img{
+    width: 180px;
+}
+
+/* .box__footer .terms{
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: #7a7a7a;
+    font-size: 18px;
+} */
+
+.box__footer h2{
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: 700;
+}
+
+.box__footer a{
+    margin-top: 10px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.box__footer a:hover{
+    opacity: 0.8;
+}
+
+.box__footer a .fab{
+    font-size: 20px;
+}
+
+.box__copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p{
+    margin-top: 20px;
+    color: #7a7a7a;
+}
+
+.box__copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #7a7a7a;
+}
+
+
+/********** media queries ***************************************/
+
+@media only screen and (max-width:800px){
+      #imagen-introducion, .mitad {width:100%;}
+}
+
+
+  /*** estas 2 media queries están para que salte el menu hamburguesa
+       ANTES DE QUE SE ME FORMEN 2 FILAS DE BOTONES *********/
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .imgmain {
+    height: 50%;
+  }
+  #componentes {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 60%;
+    gap: 1%;
+    padding: 0%;
+  }
+  #izqda, #derecha {
+    padding: 0;
+    margin-bottom: 10%;
+  }
+}
