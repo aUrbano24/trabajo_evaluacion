@@ -1,5 +1,4 @@
-
-/*Menu hamburguesa*/
+/**Abrir descripción de componentes */
 var acc = document.getElementsByClassName("accordion");
   var i;
         
@@ -14,6 +13,8 @@ var acc = document.getElementsByClassName("accordion");
           }
         });
       }
+      
+/*Menu hamburguesa*/
       function myFunction() {
       var x = document.getElementById("myTopnav");
       if (x.className === "topnav") {
@@ -53,10 +54,12 @@ function showSlides(n) {
 }
 
 /**Ocultar y mostrar texto*/
-function mostrar(imagen){ //La función ocultar() hace visible una imagen.
-  document.getElementById(imagen).style.visibility="visible";
-}
-
-function ocultar(imagen){ //La función ocultar() oculta una imagen.
-  document.getElementById(imagen).style.visibility="hidden";
+esDispositivoMovil = () => window.innerWidth <= 725;
+const fuente = document.getElementById('fuente');
+const texto = document.getElementById('textofuente');
+fuente.addEventListener('click'), () => {
+  if(!esDispositivoMovil()){
+		texto.classList.add('activo');
+	}
+  
 }
