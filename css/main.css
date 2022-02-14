@@ -1,0 +1,129 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5, button, .amiibo-name{
+    font-family: 'Bitter', serif;
+
+}
+/*------------------------BIENVENIDA-----------------------------*/
+#cuadro-bienvenida{
+    background-color: #DC3545;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(131, 21, 21, 0.5) 25px, rgba(131, 21, 21, 0.5) 40px); /*Líneas del cuadro de bienvenida*/
+}
+#cuadro-bienvenida::after{    /*Utilizamos after, ya que vamos añadir contenido al content*/
+    content: '';    /*Para evitar que se vean líneas en blanco del fondo*/
+    height: 20px;
+    width: 50%;
+    margin: 0 auto; /*Ponemos un margin 0 arriba y abajo y un margin automatico a los lados*/
+    left: auto;
+    margin-top: -40px;
+}
+#separator-bienvenida{
+    width: 100%;
+}
+#separator-bienvenida .content{
+    width: 150%;
+    height: 100px;
+    margin-left: -25%; /*Utilizamos este margin-left porque boostrap no me deja realizar esta cantidad exacta de margin*/
+    border-bottom-left-radius: 50%; /*Utilizamos el radius para conseguir el efecto redondeado*/
+    border-bottom-right-radius: 50%;
+}
+#bienvenida{
+    background-color: #DC3545;
+    margin-top: -20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);/*Agrego el box-shadow con css porque esta sombra en concreto no me la ofrece boostrap*/
+}
+
+
+#bienvenida img{
+    margin-top: -30px;
+}
+/*------------------------FIN BIENVENIDA-----------------------------*/
+
+/*------------------------PRESENTACIÓN-----------------------------*/
+
+#presentacion{
+    background: rgb(255,255,255);
+    background: url(../img/fondo.jpg),  linear-gradient(0deg, rgb(199, 199, 216) 0%, rgba(99,196,255,1) 57%); /*Ponemos un segundo fondo adicional para cuando el fondo principal no cubra toda la sección.*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: -20px;
+}
+
+    
+    @media screen and (max-width: 955px) {
+    #presentacion {/*No se puede hacer con boostrap a si que lo hacemos de esta manera, lo que hace es cambiar la imagen de fondo por un fondo, para hacerlo más responsive.*/
+        background-image: linear-gradient(0deg, rgb(146, 217, 221) 0%,rgb(83, 241, 122) 57%);
+    }
+
+}
+
+.card-border{
+    border: solid 10px white;/*Pongo el border con css ya que no me deja poner con boostrap este color*/
+    border-radius: 20px; /*Pongo este redondeado sin usar boostrap porque quiero especificamente este nivel de redondeado*/
+    transition: all ease-out 0.2s;/*Boostrap no me deja poner esta transición*/
+}
+.card-border:hover{ 
+    transform: scale(1.05); /*Para que cuando pases el cursor por encima la imagen se agrande*/
+}
+
+.text-shadow{
+    text-shadow: 0 3px 3px rgba(255, 255, 255, 0.6); /*Boostrap no me permite darle sombra al texto*/
+}
+/*------------------------FIN PRESENTACIÓN-----------------------------*/
+
+/*------------------------ENTRETENIMIENTO-----------------------------*/
+#entretenimiento{   
+    background-color: rgb(255, 255, 219);
+    background-size: 40px 40px;
+}
+#separator-entretenimiento{
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background-color: #4E8259;
+}
+#separator-entretenimiento .content{
+    width: 110%;
+    height: 50px;
+    margin-left: -5%;
+/*   border-top-left-radius: 50%;
+    border-top-right-radius: 50%; */
+}
+/*------------------------FIN ENTRETENIMIENTO-----------------------------*/
+
+/*------------------------AMIIBOS-----------------------------*/
+
+/* #separator-amiibos-footer{
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../img/pokemons_corriendo.gif),;
+}
+ */
+
+#amiibos{
+    background: url(../img/fondo_amiibos.jpg);
+    background-repeat: no-repeat ;
+    background-position: bottom center, center center;
+    background-size: 100%, auto;
+}
+.amiibo{
+    cursor: pointer; /*Para el cambio de cursor*/
+    transition: all ease-out 0.2s;
+}
+.amiibo:hover{
+    transform: scale(1.05); /*Para que la imagen se amplie*/
+}
+
+.amiibo-name{
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+/*     margin: 0 auto;   || Hecho con boostrap*/ 
+    text-align: center;
+    border-radius: 15px;
+}
+/*------------------------FIN AMIIBOS-----------------------------*/
+
+
